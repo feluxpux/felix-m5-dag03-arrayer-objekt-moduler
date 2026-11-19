@@ -1,5 +1,7 @@
 // Dag 3, del 1: Arrayer och objekt i Console.
 import { meny } from './data'
+import { studentPris } from './rabatt'
+import { formateraPris } from './pris'
 
 // UPPGIFT 1: arrayer
 // a) skapa const drycker: string[] = ["Bryggkaffe", "Latte", "Te"];
@@ -48,3 +50,15 @@ for (const ratt of meny) {
     console.log(`${ratt.namn} - ${ratt.pris} kr`)
 }
 console.log('sista:', meny[meny.length - 1].namn)
+
+//steg 10
+for (const ratt of meny) {
+    console.log(
+        `${ratt.namn}: studentpris ${formateraPris(studentPris(ratt.pris))}`
+    )
+}
+
+// 1. Cannot use import statement outside a module,
+// 2. Failed to resolve import, filen finns inte där sökvägen pekar.
+// 3. Cross-Origin begäran blockerad: Same-Origin policyn tillåter inte läsningar av fjärresurs på file:///src/main.ts. (Orsak: CORS begäran inte http). 2
+// Modulkälla URI är inte tillåtet i detta dokument: “file:///src/main.ts”. moduler laddas via http, inte file://, så webbläsaren blockerar (CORS).
